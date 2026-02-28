@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FC Tecnologia | Sistema</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00c853">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<!-- Splash -->
+<div id="splash">
+    <img src="logo-512.png" alt="FC Tecnologia" class="logoSplash">
+    <div class="loadingBar">
+        <div class="loadingFill"></div>
+    </div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<header>
+    <img src="logo-horizontal.png" alt="FC Tecnologia" class="logoHeader">
+</header>
+
+<main class="container">
+
+<h1>Gerador de Orçamento</h1>
+
+<form id="formOrcamento">
+<input type="text" id="cliente" placeholder="Nome do Cliente" required>
+<textarea id="descricao" placeholder="Descrição do Projeto"></textarea>
+<input type="number" id="horas" placeholder="Horas estimadas" required>
+<input type="number" id="valorHora" placeholder="Valor por hora (R$)" required>
+
+<select id="complexidade">
+<option value="1">Simples</option>
+<option value="1.3">Média</option>
+<option value="1.6">Complexa</option>
+<option value="2">Muito Complexa</option>
+</select>
+
+<input type="number" id="taxaExtra" value="0" placeholder="Taxa extra">
+
+<button type="submit">Calcular</button>
+<button type="button" id="btnPDF">Gerar PDF</button>
+</form>
+
+<div id="resultado" class="resultado"></div>
+
+<section class="historico">
+<h2>Histórico</h2>
+<div id="listaClientes"></div>
+</section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
